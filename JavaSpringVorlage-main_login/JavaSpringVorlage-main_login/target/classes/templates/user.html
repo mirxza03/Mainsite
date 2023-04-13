@@ -1,0 +1,36 @@
+<h1>User Form</h1>
+<hr>
+<form action="#" th:action="@{/userForm}" method="post">
+   <div class="mb-3">
+      <p th:if="${#fields.hasErrors('user.vorname')}" th:errors="*{user.vorname}" class="text-danger"></p>
+      <label for="vorname">Vorname:</label>
+      <input type="text" id="vorname" name="vorname" th:field="*{user.vorname}"  />
+
+   </div>
+   <div class="mb-3">
+      <p th:if="${#fields.hasErrors('user.nachname')}" th:errors="*{user.nachname}" class="text-danger"></p>
+      <label for="nachname">Nachname:</label>
+      <input type="text" id="nachname" name="nachname" th:field="*{user.nachname}"  />
+   </div>
+   <div class="mb-3">
+      <p th:if="${#fields.hasErrors('user.geburtstag')}" th:errors="*{user.geburtstag}" class="text-danger"></p>
+      <label for="geburtstag">Geburtsdatum:</label>
+      <input type="date" id="geburtstag" name="geburtstag" th:field="*{user.geburtstag}"  />
+   </div>
+   <div class="mb-3">
+      <p th:if="${#fields.hasErrors('user.email')}" th:errors="*{user.email}" class="text-danger"></p>
+      <label for="email">E-Mail-Adresse:</label>
+      <input type="email" id="email" name="email" th:field="*{user.email}"  />
+   </div>
+   <div class="mb-3">
+      <p th:if="${#fields.hasErrors('user.postleitzahl')}" th:errors="*{user.postleitzahl}" class="text-danger"></p>
+      <label for="postleitzahl">Postleitzahl:</label>
+      <input type="text" id="postleitzahl" name="postleitzahl" th:field="*{user.postleitzahl}"  />
+   </div>
+   <div class="mb-3">
+      <p th:if="${#fields.hasErrors('user.agbAkzeptiert')}" th:errors="*{user.agbAkzeptiert}" class="text-danger"></p>
+      <input type="checkbox" id="agbAkzeptiert" name="agbAkzeptiert" th:field="*{user.agbAkzeptiert}"  />
+      <label for="agbAkzeptiert">Ich akzeptiere die AGB</label>
+   </div>
+   <button type="submit">Abschicken</button>
+</form>
